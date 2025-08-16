@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -25,3 +28,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

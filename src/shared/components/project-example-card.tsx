@@ -1,4 +1,5 @@
-import React from "react";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 interface CardProps {
   Image: string | null;
@@ -13,6 +14,7 @@ const ProjectExampleCard: React.FC<CardProps> = ({
   discription,
   liveLink,
 }) => {
+  const {t}=useTranslation()
   return (
     <div className="backdrop-blur-sm bg-black/30 rounded-xl shadow-lg overflow-hidden  flex flex-col">
       {/* Image Section */}
@@ -20,7 +22,7 @@ const ProjectExampleCard: React.FC<CardProps> = ({
         {Image ? (
           <img src={Image} alt={Name} className="w-full h-full object-cover" />
         ) : (
-          <span className="text-gray-500 text-sm">No Image Available</span>
+          <span className="text-gray-500 text-sm">{t("no_image_available")}</span>
         )}
       </div>
 
@@ -37,7 +39,7 @@ const ProjectExampleCard: React.FC<CardProps> = ({
           rel="noopener noreferrer"
           className=" inline-block hover:text-[#6b25ff] text-center w-fit  text-[#e0e1dd] text-sm px-4 py-2 rounded-lg border border-[#cfe80e] transition"
         >
-          Live
+          {t("live")}
         </a>
       </div>
     </div>

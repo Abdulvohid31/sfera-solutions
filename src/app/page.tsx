@@ -17,7 +17,9 @@ import Services from "@/Ui/home-sections/services/service-section";
 import Footer from "@/widgets/footer";
 import Link from "next/link";
 import About from "@/Ui/home-sections/about";
+import { useTranslation } from "react-i18next";
 export default function Home() {
+  const {t}=useTranslation()
   return (
     <div className="w-[100vw] max-w-screen flex flex-col justify-center font-semibold items-center  bg-[#000723]">
       <Container className="">
@@ -50,7 +52,7 @@ export default function Home() {
         <Hero />
         <div className="mt-[-23rem] md:mt-[-40rem] lg:mt-[20rem]">
           <Quote
-          text="From Ideas to Reality with Sfere"
+          text={t("aboutTitle")}
           author="Javokhir Khoziboyev CTO"
         />
         </div>

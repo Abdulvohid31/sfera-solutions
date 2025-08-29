@@ -1,6 +1,6 @@
 import React from "react";
 
-const ServicesCard = ({
+const  ServicesCard = ({
   icon,
   title,
   discription,

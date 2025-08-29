@@ -1,6 +1,7 @@
 import ColoredText from "@/shared/components/colored-text";
 import ServicesCard from "@/shared/components/services-card";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaBusinessTime, FaReact } from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
 import { IoShareSocial } from "react-icons/io5";
@@ -39,13 +40,14 @@ const Services = () => {
         "We help you save time and resources by automating all your business processes. We create a systematic approach to increasing your efficiency.",
     },
   ];
+  const {t}=useTranslation()
   return (
     <div className="mt-5 lg:mt-40 mb-10 px-4 md:px-8 lg:px-16">
   {/* Section Header */}
   <div className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
     <p className="text-3xl md:text-4xl font-semibold flex items-center gap-2">
       <ColoredText text="#" />
-      services
+      {t("our_services")}
     </p>
   </div>
 

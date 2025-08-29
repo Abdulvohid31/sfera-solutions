@@ -1,7 +1,11 @@
 import React from "react";
 
-const ColoredText = ({ text }: { text: string }) => {
-  return <div className="text-[#cfe80e] inline-block">{text}</div>;
+interface ColoredTextProps {
+  text: string;
+}
+
+const ColoredText = ({ text }: ColoredTextProps) => {
+  return <span className="text-[#cfe80e]">{text}</span>;
 };
 
 export default ColoredText;

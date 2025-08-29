@@ -48,10 +48,12 @@ export default function Home() {
         </div>
         <Header />
         <Hero />
-        <Quote
+        <div className="mt-[-23rem] md:mt-[-40rem] lg:mt-[20rem]">
+          <Quote
           text="From Ideas to Reality with Sfere"
           author="Javokhir Khoziboyev CTO"
         />
+        </div>
         <About />
 
         <ProjectExaples />

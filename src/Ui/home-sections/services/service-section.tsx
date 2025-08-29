@@ -40,23 +40,28 @@ const Services = () => {
     },
   ];
   return (
-    <div className="mt-5 lg:mt-40 mb-10">
-      <div className="mb-10 flex justify-between text-4xl">
-        <p>
-          <ColoredText text="#" />
-          services
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-        {ServicesList.map((item) => (
-          <ServicesCard
-            icon={item.Icon}
-            title={item.title}
-            discription={item.discription}
-          />
-        ))}
-      </div>
-    </div>
+    <div className="mt-5 lg:mt-40 mb-10 px-4 md:px-8 lg:px-16">
+  {/* Section Header */}
+  <div className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <p className="text-3xl md:text-4xl font-semibold flex items-center gap-2">
+      <ColoredText text="#" />
+      services
+    </p>
+  </div>
+
+  {/* Services Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+    {ServicesList.map((item, index) => (
+      <ServicesCard
+        key={index}
+        icon={item.Icon}
+        title={item.title}
+        discription={item.discription}
+      />
+    ))}
+  </div>
+</div>
+
   );
 };
 

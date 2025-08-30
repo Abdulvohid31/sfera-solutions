@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { BiPhone } from "react-icons/bi";
 import {
   FaFacebookF,
@@ -9,21 +10,21 @@ import {
 import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
+  const {t}=useTranslation()
   return (
     <footer className="bg-black/30 w-full backdrop-blur-sm text-gray-300 py-10 ">
       <div className="max-w-[80%] mx-auto  px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Logo & About */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-3">MyCompany</h2>
+          <h2 className="text-2xl font-bold text-white mb-3">{t("companyName")}</h2>
           <p className="text-sm">
-            We provide the best services to our customers. Quality, reliability
-            and efficiency are our core values.
+            {t("ourValuesDescription")}
           </p>
         </div>
 
         {/* Social Media */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Contact us</h3>
+          <h3 className="text-lg font-semibold text-white mb-3">{t("contactUs")}</h3>
           <div className="flex flex-col gap-5">
             <div className="flex gap-2 items-center">
               <BiPhone size={20} />

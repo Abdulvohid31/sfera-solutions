@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 
 const About = () => {
   const {t}=useTranslation()
+  const aboutText = t("aboutUs"); // "Bizning kompaniya 2022-yilda tashkil topgan, {{company}} raqamli ..."
+  const parts = aboutText.split("{{company}}");
   return (
     <div className="mt-10 xl:mt-40 px-4 md:px-8 lg:px-16">
   {/* Header */}
@@ -33,9 +35,10 @@ const About = () => {
       </div>
 
       <h2 className="text-xl md:text-3xl font-medium">
-        {t("aboutUs")}
-        <ColoredText text="Sfera IT Solution" />
-      </h2>
+      {parts[0]}
+      <ColoredText text="Sfera IT Solution" />
+      {parts[1]}
+    </h2>
 
       <div className="text-sm md:text-base text-[#e0e1dd]">
         {t("company.mission")}

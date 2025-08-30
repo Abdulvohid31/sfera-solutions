@@ -9,7 +9,7 @@ export default function Hero() {
   return (
   <div
   id="hero"
-  className="relative flex flex-col xl:flex-row justify-between items-center h-screen px-4 md:px-10 lg:px-20 font-semibold"
+  className="relative flex mt-[3.5rem] flex-col xl:flex-row justify-between items-center h-screen px-4 md:px-10 lg:px-20 font-semibold"
 >
   {/* Text Section */}
   <div className="flex flex-col gap-5 text-center xl:text-left mt-27 xl:mt-0 order-1 xl:order-none">
@@ -20,7 +20,7 @@ export default function Hero() {
 </div>
     <p className="text-base sm:text-lg md:text-xl text-[#e0e1dd] max-w-md mx-auto xl:mx-0">
       <span className="text-[#cfe80e]">“</span>
-      {t("heroDescription").replace("IT solutions", "")}
+      {t("heroDescription").replace(" IT solutions"," ")}
       <ColoredText text="IT solutions " />
     </p>
   </div>

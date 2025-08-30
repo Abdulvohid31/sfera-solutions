@@ -8,39 +8,39 @@ import { IoShareSocial } from "react-icons/io5";
 import { SiOdoo } from "react-icons/si";
 
 const Services = () => {
+  const {t}=useTranslation()
   const ServicesList = [
     {
       Icon: <FaFlutter size={30} />,
-      title: "Mobile App (Android/IOS)",
+      title: t("mobileApp"),
       discription:
-        "We develop modern, fast and user-friendly mobile applications for iOS and Android platforms. We combine software design, usability and create a unique solution for your business.",
+        t("mobileAppDescription"),
     },
     {
       Icon: <FaReact size={30} />,
-      title: "Website Development",
+      title: t("websiteDevelopment"),
       discription:
-        "We develop SEO optimized, fast and responsive websites. We provide modern design and convenient features for your business.",
+      t("websiteDescription")    
     },
     {
       Icon: <SiOdoo size={30} />,
-      title: "ERP Solutions (odoo)",
+      title: t("erpSolutions"),
       discription:
-        "Through Odoo ERP, we create the opportunity to manage your business processes in a single system - integrating sales, warehouse, finance, and other modules.",
+        t("erpDescription")
     },
     {
       Icon: <IoShareSocial size={30} />,
-      title: "CRM",
+      title: t("crm"),
       discription:
-        "We install and configure CRM systems to effectively manage customer relationships and consolidate customer information into a single database.",
+        t("crmDescription")
     },
     {
       Icon: <FaBusinessTime size={30} />,
-      title: "Business Systematization",
+      title: t("businessSystematization"),
       discription:
-        "We help you save time and resources by automating all your business processes. We create a systematic approach to increasing your efficiency.",
+       t("businessSystematizationDescription")
     },
   ];
-  const {t}=useTranslation()
   return (
     <div className="mt-5 lg:mt-40 mb-10 px-4 md:px-8 lg:px-16">
   {/* Section Header */}

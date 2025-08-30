@@ -1,3 +1,4 @@
+"use client"
 import Container from "@/shared/components/container";
 import Header from "@/widgets/header";
 import React from "react";
@@ -9,51 +10,46 @@ import ColoredText from "@/shared/components/colored-text";
 import Rectangle from "@/app/assets/Rectangle.png";
 import halfOfLogo from "@/app/assets/halg-of-logo.png";
 import SeconHalfOfLogo from "@/app/assets/second-part-of-logo.png";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const {t}=useTranslation()
   const productList = [
     {
       image: BookersPhoto,
       projectsName: "Bookers",
-      discription: `Bookers is a unified platform designed for barbershops to streamline their 
-        booking process. The solution includes a mobile application for clients, allowing them 
-        to easily schedule appointments in advance, view available time slots, and receive 
-        reminders. For barbers and shop managers, a web-based admin panel enables efficient 
-        management of appointments, customer records, and staff schedules. The system is built 
-        to improve customer satisfaction, reduce no-shows, and optimize business operations.`,
-      servises: ["Mobile App", "Web-admin dashboard"],
+      discription:t("description"),
+      servises: [t("serviceMobileApp"), t("serviceWebAdmin")],
       link: "https://bookers.uz",
     },
     {
       image: GeodezistPhoto,
       projectsName: "Geodezist",
-      discription: `Geodezist is an interactive web-based quiz platform created to assess and
-       improve the knowledge of geodesy specialists. The platform offers a variety of topic-based
-        tests that help professionals evaluate their expertise, identify areas for improvement, and prepare for certification or 
-      job applications. With a simple and user-friendly interface, users can take timed quizzes, receive instant results, and track their progress over time.`,
-      servises: ["web-site"],
+      discription: t("projectDescription"),
+      servises: [t("services")],
       link: "https://geodezist.uz",
     },
     {
       image: QrPayPhoto,
       projectsName: "Qr-pay",
-      discription: `QR Pay is a QR-based payment solution that lets customers pay in Russian Rubles (RUB) while merchants receive funds in Uzbek Som (UZS)—automatically 
-      converted at the moment of payment. The system streamlines cross-border payments, reduces manual reconciliation, and provides transparent rates and fees in real time.`,
-      servises: ["Mobile App", "Web-admin dashboard"],
+      discription: t("descriptionQRPay"),
+      servises: [t("serviceMobileApp"), t("serviceWebAdmin")],
     },
   ];
   return (
     <div className="bg-[#000723] min-w-screen">
   <Container>
     <Header />
-    <div className="pt-20 lg:pt-40 w-full flex flex-col gap-5 justify-center items-center py-16">
+     <div className="pt-20 lg:pt-40 w-full flex flex-col gap-5 justify-center items-center py-16">
       <h1 className="text-4xl sm:text-5xl mt-[3rem] lg:text-6xl text-center">
-        Our <ColoredText text="projects" />
+        {t("projectsTitle").split(" ").map((word, idx) => 
+          word.toLowerCase() === "projects" || word.toLowerCase() === "loyihalarimiz" || word.toLowerCase() === "проекты" 
+          ? <ColoredText key={idx} text={word} /> 
+          : <span key={idx}> {word} </span>
+        )}
       </h1>
       <p className="text-base sm:text-lg lg:text-xl text-center max-w-2xl">
-        Explore our latest <ColoredText text="projects" /> and see how we've
-        helped businesses transform their digital presence and achieve their
-        goals.
+        {t("projectsDescription")}
       </p>
     </div>
 
@@ -81,7 +77,7 @@ const Projects = () => {
                 href={item.link}
                 className="bg-[#e0e1dd] backdrop-blur-sm cursor-pointer text-black px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium hover:bg-[#000723] hover:text-[#e0e1dd] transition"
               >
-                View more
+                {t("viewMore")}
               </a>
             </div>
           </div>
